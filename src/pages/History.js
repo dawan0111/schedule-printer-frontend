@@ -53,7 +53,7 @@ const Empty = styled.div`
 `
 
 export default function History() {
-  const { history, getHistory } = useHistory();
+  const { history, getHistory, setHistory } = useHistory();
   const { printers, getPrinters, loading } = usePrinter()
   const { active, setActive, handleTabClick } = useTabs(null)
   const { modal } = React.useContext(AuthContext)
@@ -75,8 +75,15 @@ export default function History() {
   }, [getPrinters])
 
   React.useEffect(() => {
-    if (active) getHistory(active)
-  }, [active, getHistory])
+    if (active) {
+      getHistory(active)
+    } else {
+      setHistory(history => ({
+        ...history,
+        fetching: true,
+      }));
+    }
+  }, [active, getHistory, setHistory])
 
   React.useEffect(() => {
     if (printers.length !== 0 && active === null) {

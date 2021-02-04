@@ -47,6 +47,7 @@ export default function useHistory() {
     history,
     ranking,
 
+    setHistory,
     getRanking,
     getHistory,
     createHistory,

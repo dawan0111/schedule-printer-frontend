@@ -14,12 +14,10 @@ export default function useModal(initOpen = false) {
   }, [])
 
   const handleClose = React.useCallback(() => {
-    setTimeout(() => {
-      setState({
-        open: false,
-        message: ''
-      })
-    }, 500)
+    setState({
+      open: false,
+      message: ''
+    })
   }, [])
 
   return {
