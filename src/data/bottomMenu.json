@@ -1,0 +1,20 @@
+[
+  {
+    "id": "reservation",
+    "icon": "book_online",
+    "link": "/",
+    "name": "예약"
+  },
+  {
+    "id": "history",
+    "icon": "history",
+    "link": "/history",
+    "name": "사용내역"
+  },
+  {
+    "id": "ranking",
+    "icon": "military_tech",
+    "link": "/ranking",
+    "name": "순위"
+  }
+]

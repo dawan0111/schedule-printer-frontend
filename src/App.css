@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body, html {
+  font-size: 2vmin;
+}
+
+h1, h2, h3, h4 ,h5, h6 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+
+.rap {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+body, html {
+  background: #ededed;
+}
+
+@media (max-width: 768px) {
+  body, html {
+    font-size: 4vw;
+  }
+}
