@@ -5,9 +5,6 @@ import './index.css';
 import App from './App';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { UIContextProvider } from './contexts/UIContext';
-import ReactGA from 'react-ga';
-
-ReactGA.initialize('G-EH6FY8SHN5', { debug: true });
 
 ReactDOM.render(
   <React.StrictMode>
