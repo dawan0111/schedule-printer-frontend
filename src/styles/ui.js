@@ -28,6 +28,14 @@ export const FormControl = styled.div`
     color: #fff;
     background: #3f62f8;
     font-weight: bold;
+
+    &.submit-button--delete {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: red;
+      color: #fff;
+    }
   }
 `
 
@@ -68,6 +76,12 @@ export const List = styled.div`
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: .5em;
+
+    p {
+      font-size: .6em;
+      font-weight: normal;
+      color: #666;
+    }
   }
 `
 

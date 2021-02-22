@@ -5,6 +5,7 @@ import { List, Card, CardTitle, CardBody, CardHeader, FormActionControl, FormCon
 import AuthContext from '../contexts/AuthContext'
 import UIContext from '../contexts/UIContext'
 import usePrinter from '../hooks/usePrinter'
+import useHistory from '../hooks/useHistory'
 
 
 const Wrapper = styled(Card)`
@@ -52,6 +53,9 @@ export default function Admin() {
     deletePrinter,
     updatePrinter
   } = usePrinter()
+  const {
+    deleteHistory
+  } = useHistory()
   const {
     modal,
     admins,
@@ -102,6 +106,14 @@ export default function Admin() {
       if (response && response.code === 200) {
         onShow("수정이 완료되었습니다", "success");
       }
+    }
+  }
+
+  const handleHistoryDeleteClick = async () => {
+    
+    const response = await deleteHistory();
+    if (response && response.code === 200) {
+      onShow("초기화가 완료되었습니다", "success");
     }
   }
 
@@ -188,6 +200,22 @@ export default function Admin() {
             <button className="submit-button" onClick={() => {
               if (inputId) createAdmin(inputId);
             }}>추가</button>
+          </FormControl>
+        </List>
+      </CardBody>
+      <BetWeen />
+      <CardBody>
+        <List>
+          <h2 className="title">
+            리셋
+            <p>리셋 버튼 클릭시 3D 프린터 예약 정보가 초기화 됩니다.</p>
+          </h2>
+          <FormControl>
+            <button className="submit-button submit-button--delete" onClick={() => {
+              handleHistoryDeleteClick()
+            }}>
+              리셋
+            </button>
           </FormControl>
         </List>
       </CardBody>

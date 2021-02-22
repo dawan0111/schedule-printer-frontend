@@ -43,6 +43,11 @@ export default function useHistory() {
     return response;
   }, [])
 
+  const deleteHistory = React.useCallback(async () => {
+    const response = await API.deleteHistory();
+    return response;
+  }, [])
+
   return {
     history,
     ranking,
@@ -51,5 +56,6 @@ export default function useHistory() {
     getRanking,
     getHistory,
     createHistory,
+    deleteHistory
   }
 }

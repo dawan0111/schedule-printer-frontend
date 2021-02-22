@@ -94,6 +94,11 @@ const API = {
   async getRanking() {
     const response = await axios.get('/historys/ranking');
     return response.data;
+  },
+
+  async deleteHistory() {
+    const response = await axios.delete('/historys');
+    return response.data;
   }
 }
 
